@@ -1,0 +1,4 @@
+azure-functions
+opencv-python
+azure-cognitiveservices-vision-face
+azure-storage-blob==1.5.0
