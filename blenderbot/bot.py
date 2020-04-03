@@ -6,7 +6,7 @@ from botbuilder.schema import ChannelAccount, HeroCard, CardImage
 import requests
 import random
 
-api_url = "https://coportrait.azurewebsites.net/api/pdraw?code=7mSfbEqAyLz45PpFv9CqKh5Q87TCrb7W7ePiNytwE2g9weEe0XH3PQ=="
+api_url = "https://coportrait.azurewebsites.net/api/pdraw?code=7...PQ=="
 
 welcome_urls = [
     "http://soshnikov.com/images/art/PhoBoGuy.png",
