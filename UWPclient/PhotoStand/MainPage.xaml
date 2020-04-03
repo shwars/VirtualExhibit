@@ -1,0 +1,44 @@
+﻿<Page
+    x:Class="PhotoStand.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PhotoStand"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="170"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Grid.Column="0" BorderThickness="2" BorderBrush="Blue">
+            <Grid x:Name="FacesCanvas" >
+               <CaptureElement x:Name="ViewFinder" />
+               <Rectangle x:Name="FaceRect" Visibility="Collapsed" StrokeThickness="2" Stroke="Yellow" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <TextBlock x:Name="Counter" Visibility="Collapsed" HorizontalAlignment="Left" VerticalAlignment="Top" TextAlignment="Center" FontSize="60" FontWeight="ExtraBold" FontFamily="Segoe UI" Foreground="Yellow"></TextBlock>
+            </Grid>
+        </Border>
+        <Border Grid.Row="0" Grid.Column="1" BorderThickness="2" BorderBrush="Blue">
+            <Grid x:Name="ResultCanvas" >
+                <Image x:Name="ResultImage" Source="Assets/bgates.jpg"/>
+            </Grid>
+        </Border>
+        <ItemsControl x:Name="FacesLine" Margin="10" Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{x:Bind Faces,Mode=OneWay}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                   <Image HorizontalAlignment="Center" Source="{Binding}" Height="120" Width="100"/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </Grid>
+</Page>
