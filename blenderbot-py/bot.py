@@ -17,7 +17,7 @@ welcome_urls = [
     "http://soshnikov.com/images/art/mama.jpg"
 ]
 welcome_text = """
-This bot is an interactive art exhibit that creates a Cognitive Portrait http://aka.ms/cognitive. Send your photograph to the bot and it will be blended together with 10 last photographs received by bot from different people.
+This bot is an interactive art exhibit that creates a Cognitive Portrait http://aka.ms/cognitiveportrait. Send your photograph to the bot and it will be blended together with 10 last photographs received by bot from different people.
 """
 photo_msg = """
 This bot loves photographs of people! Please send one!
@@ -57,4 +57,4 @@ class MyBot(ActivityHandler):
     ):
         for member_added in members_added:
             if member_added.id != turn_context.activity.recipient.id:
-                await send_welcome(turn_context)
+                await self.send_welcome(turn_context)

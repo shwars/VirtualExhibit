@@ -11,6 +11,7 @@ from botbuilder.core import (
     BotFrameworkAdapterSettings,
     TurnContext,
     BotFrameworkAdapter,
+    ShowTypingMiddleware
 )
 from botbuilder.core.integration import aiohttp_error_middleware
 from botbuilder.schema import Activity, ActivityTypes
@@ -55,6 +56,7 @@ async def on_error(context: TurnContext, error: Exception):
 
 
 ADAPTER.on_turn_error = on_error
+ADAPTER.use(ShowTypingMiddleware())
 
 # Create the Bot
 BOT = MyBot()
